@@ -11,7 +11,7 @@ public class App {
         System.out.println("a: Get top headlines austria");
         System.out.println("b: Get all news about bitcoin");
         System.out.println("y: Count articles");
-        System.out.println("q: Quit programs");
+        System.out.println("q: Quit program");
     }
 
     public String message(){
