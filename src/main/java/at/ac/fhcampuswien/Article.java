@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien;
 
+import java.util.List;
+
 public class Article {
     private String author;
     private String title;
@@ -11,7 +13,11 @@ public Article(String author, String title){
 
 }
 
-public String getAuthor(){
+    public Article(List<Article> articles) {
+
+    }
+
+    public String getAuthor(){
     return this.author;
 }
 
@@ -21,6 +27,6 @@ public String getTitle() {
 
 @Override
     public String toString() {
-      return author;
+      return author + title;
 }
 }
