@@ -19,4 +19,20 @@ public class AppController extends Menu {
         return 0;
     }
 
+    public List<Article> getTopHeadlinesAustria () {
+        return articles;
+    }
+    public List<Article> getAllNewsBitcoin () {
+        return articles;
+    }
+    protected List<Article> filterList (String query, List<Article> articles){
+        return articles;
+    }
+    private List<Article> generateMockList () {
+        return articles;
+    }
+
 }
+
+
+
