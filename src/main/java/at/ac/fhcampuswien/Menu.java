@@ -1,29 +1,27 @@
 package at.ac.fhcampuswien;
 
-
 import java.util.Scanner;
 
-public class Menu  {
+public class Menu extends AppController {
 
     private AppController controller;
     private String INVALID_USER_INPUT_MESSAGE;
-    private  String EXIT_MESSAGE;
+    private String EXIT_MESSAGE;
 
-      public Menu(){
-          this.INVALID_USER_INPUT_MESSAGE ="Invalid selection!";
-          this.EXIT_MESSAGE = "Bye Bye!";
-      }
+    public Menu() {
+        super();
+        this.INVALID_USER_INPUT_MESSAGE = "Invalid selection!";
+        this.EXIT_MESSAGE = "Bye Bye!";
+    }
 
-
-
-    public  void start() {
+    public void start() {
         printMenu();
         handleInput("");
-
     }
-    private void handleInput (String Input) {
+
+    private void handleInput(String Input) {
         Scanner sc = new Scanner(System.in);
-          Input = String.valueOf(sc.next().charAt(0));
+        Input = String.valueOf(sc.next().charAt(0));
         switch (Input) {
             case "a" -> getTopHeadlinesAustria(this.controller);
             case "b" -> getAllNewsBitcoin(this.controller);
@@ -36,19 +34,29 @@ public class Menu  {
         }
 
     }
-    private void getArticleCount (AppController controller) {
+
+    private void getArticleCount(AppController controller) {
+        System.out.println(getArticleCount());
     }
-    private void getTopHeadlinesAustria (AppController controller) {
+
+    private void getTopHeadlinesAustria(AppController controller) {
+        getTopHeadlinesAustria();
     }
-    private void getAllNewsBitcoin (AppController controller) {
+
+    private void getAllNewsBitcoin(AppController controller) {
+        getAllNewsBitcoin();
     }
-    private void printExitMessage () {
+
+
+    private void printExitMessage() {
         System.out.println(EXIT_MESSAGE);
     }
-    private void printInvalidInputMessage () {
+
+    private void printInvalidInputMessage() {
         System.out.println(INVALID_USER_INPUT_MESSAGE);
     }
-    private void printMenu () {
+
+    private void printMenu() {
         System.out.println("******************************");
         System.out.println("*    Welcome to NewsApp   *");
         System.out.println("******************************");
