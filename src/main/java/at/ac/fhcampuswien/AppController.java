@@ -1,16 +1,13 @@
 package at.ac.fhcampuswien;
 
-import java.awt.Menu;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class AppController extends Article {
+public class AppController {
     private List<Article> articles;
 
 
     public AppController(List<Article> articles, AppController controller) {
-        super();
         this.articles = articles;
     }
 
@@ -19,6 +16,7 @@ public class AppController extends Article {
     }
 
     public void setArticles(List<Article> articles) {
+        this.articles = articles;
     }
 
     public List<Article> getTopHeadlinesAustria() {
