@@ -2,14 +2,13 @@ package at.ac.fhcampuswien;
 
 import java.util.Scanner;
 
-public class Menu extends AppController {
+public class Menu {
 
     private AppController controller;
-    private String INVALID_USER_INPUT_MESSAGE;
-    private String EXIT_MESSAGE;
+    private final String INVALID_USER_INPUT_MESSAGE;
+    private final String EXIT_MESSAGE;
 
     public Menu() {
-        super();
         this.INVALID_USER_INPUT_MESSAGE = "Invalid selection!";
         this.EXIT_MESSAGE = "Bye Bye!";
     }

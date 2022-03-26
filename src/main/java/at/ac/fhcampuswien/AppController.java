@@ -7,16 +7,13 @@ public class AppController {
     private List<Article> articles;
 
 
-    public AppController(List<Article> articles, AppController controller) {
-        this.articles = articles;
-    }
-
     public AppController() {
-
+        this.articles = generateMockList();
     }
+
 
     public void setArticles(List<Article> articles) {
-        this.articles = articles;
+        this.articles = generateMockList();
     }
 
     public List<Article> getTopHeadlinesAustria() {
@@ -35,14 +32,14 @@ public class AppController {
     }
 
     protected List<Article> filterList(String query, List<Article> articles) {
-
-        for (int i = 0; i < generateMockList().size(); i++) {
-            if (generateMockList().get(i).toString().toLowerCase().contains(query.toLowerCase())) {
-                System.out.println(generateMockList().get(i));
+        List<Article> rem_article = new ArrayList<>();
+        for (int i = 0; i < rem_article.size(); i++) {
+            if (rem_article.get(i).toString().toLowerCase().contains(query.toLowerCase())) {
+                System.out.println(rem_article.get(i));
             }
         }
 
-        return articles;
+        return rem_article;
     }
 
     private static List<Article> generateMockList() {
