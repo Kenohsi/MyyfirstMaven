@@ -13,29 +13,36 @@ public class AppController {
 
 
     public void setArticles(List<Article> articles) {
-        this.articles = generateMockList();
+        this.articles = articles;
     }
 
-    public List<Article> getTopHeadlinesAustria() {
+    public int getArticleCount() {
+        if(articles == null){
+            return 0;
+        }else{
+            return generateMockList().size();
+        }
 
-        for (int i = 0; i < generateMockList().size(); i++) {
-            System.out.println(generateMockList().get(i));
+    }
+    public List<Article> getTopHeadlinesAustria() {
+        //for (int i = 0; i < generateMockList().size(); i++) {
+         return  generateMockList();
 
         }
-        return articles;
-    }
+        //return articles;
+    //}
 
     public List<Article> getAllNewsBitcoin() {
-        String query = "biTcoin";
-        filterList(query, articles);
-        return articles;
+
+        String query = "bitcoin";
+        return filterList(query, articles);
     }
 
     protected List<Article> filterList(String query, List<Article> articles) {
         List<Article> rem_article = new ArrayList<>();
-        for (int i = 0; i < rem_article.size(); i++) {
-            if (rem_article.get(i).toString().toLowerCase().contains(query.toLowerCase())) {
-                System.out.println(rem_article.get(i));
+        for (Article a : articles){
+            if (a.getTitle().toLowerCase().contains(query)) {
+                rem_article.add(a);
             }
         }
 
@@ -50,14 +57,12 @@ public class AppController {
         articles.add(two);
         Article three = new Article("Josh Martin ", "Bitcoin P&O cancels services and tells ships to stay in port");
         articles.add(three);
+        Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
+        articles.add(four);
         return articles;
     }
 
-    public int getArticleCount() {
-        int count = generateMockList().size();
 
-        return count;
-    }
 
 }
 

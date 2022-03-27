@@ -23,9 +23,20 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         Input = String.valueOf(sc.next().charAt(0));
         switch (Input) {
-            case ("a") -> getTopHeadlinesAustria(this.controller);
-            case ("b") -> getAllNewsBitcoin(this.controller);
-            case ("y") -> getArticleCount(this.controller);
+            case ("a") -> {
+                getTopHeadlinesAustria(this.controller);
+                start();
+            }
+            case ("b") -> {
+                getAllNewsBitcoin(this.controller);
+                start();
+            }
+
+            case ("y") -> {
+                getArticleCount(this.controller);
+                start();
+            }
+
             case ("q") -> printExitMessage();
             default -> {
                 printInvalidInputMessage();
@@ -40,11 +51,11 @@ public class Menu {
     }
 
     private void getTopHeadlinesAustria(AppController controller) {
-        controller.getTopHeadlinesAustria();
+        System.out.println(controller.getTopHeadlinesAustria());
     }
 
     private void getAllNewsBitcoin(AppController controller) {
-        controller.getAllNewsBitcoin();
+        System.out.println(controller.getAllNewsBitcoin());
     }
 
 
