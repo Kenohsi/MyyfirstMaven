@@ -20,7 +20,7 @@ public class AppController {
         if(articles == null){
             return 0;
         }else{
-            return generateMockList().size();
+            return articles.size();
         }
 
     }

@@ -21,14 +21,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 
-    @Test
-    void calledUpon() {
-        AppController controller = new AppController();
-        //assertEquals(controller.setArticles());
+     @Test
+     void setArticles1() {
+         //to see if the number of the Articles are the same.
+         List<Article> articles = new ArrayList<>();
+         AppController controller = new AppController();
+         controller.setArticles(articles);
+         assertEquals(articles.size(), controller.getArticleCount());
 
-    }
+     }
+     @Test
+     void setArticles2() {
+         //to see if setArticles is working.
+         List<Article> articles = new ArrayList<>();
+         List<Article> articles1 = new ArrayList<>();
+         AppController controller = new AppController();
+         Article one = new Article("Steve Rosenberg ", "Ukraine war: Russians grieve for fallen soldiers");
+         articles.add(one);
+         controller.setArticles(articles);
+         articles1.add(one);
+         assertEquals(articles, articles1);
+     }
+
+
     @Test
-    void getArticleCount() {
+    void getArticleCount1() {
         List<Article> rem_article = new ArrayList<>();
         AppController count = new AppController();
         int actual = count.getArticleCount();
@@ -39,7 +56,7 @@ import static org.junit.jupiter.api.Assertions.*;
     }
 
     @Test
-    void countArticleIfNull() {
+    void getArticleCount2() {
         List<Article> rem_article = null;
         AppController controller = new AppController();
         controller.setArticles(rem_article);
