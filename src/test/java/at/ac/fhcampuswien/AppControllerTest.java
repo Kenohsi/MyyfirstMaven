@@ -22,40 +22,62 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
     @Test
-    void calledUpon() {
+    public void setArticles1() {
+        //to see if the number of the Articles are the same.
+        List<Article> articles = new ArrayList<>();
         AppController controller = new AppController();
-        //assertEquals(controller.setArticles());
+        controller.setArticles(articles);
+        assertEquals(articles.size(), controller.getArticleCount());
 
     }
     @Test
-    void getArticleCount() {
-        List<Article> rem_article = new ArrayList<>();
-        AppController count = new AppController();
-        int actual = count.getArticleCount();
-        assertEquals(rem_article.size(), actual);
-        rem_article.add(new Article("Author", "Article"));
+    public void setArticles2() {
+        //to see if setArticles is working.
+        List<Article> articles = new ArrayList<>();
+        List<Article> articles1 = new ArrayList<>();
+        AppController controller = new AppController();
+        Article one = new Article("Steve Rosenberg ", "Ukraine war: Russians grieve for fallen soldiers");
+        articles.add(one);
+        controller.setArticles(articles);
+        articles1.add(one);
+        assertEquals(articles, articles1);
+    }
+    @Test
+    public void getArticleCount1() {
+        //to see if the List is not 0.
+        List<Article> articles = new ArrayList<>();
+        AppController controller = new AppController();
+        controller.setArticles(articles);
+        Article one = new Article("Steve Rosenberg ", "Ukraine war: Russians grieve for fallen soldiers");
+        articles.add(one);
+        Article two = new Article("Annabelle Liang ", "Businesses shut as officials widen Covid lockdowns");
+        articles.add(two);
+        Article three = new Article("Josh Martin ", "Bitcoin P&O cancels services and tells ships to stay in port");
+        articles.add(three);
+        Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
+        articles.add(four);
+        assertEquals(4, controller.getArticleCount());
+
 
 
     }
 
     @Test
-    void countArticleIfNull() {
-        List<Article> rem_article = null;
+    public void getArticleCount2() {
+        List<Article> articles = null;
         AppController controller = new AppController();
-        controller.setArticles(rem_article);
-
+        controller.setArticles(articles);
         assertEquals(0, controller.getArticleCount());
 
     }
 
 
-
-
-        @Test
-    List<Article> getTopHeadlinesAustria (List<Article> articles) {return articles;} {
+    @Test
+    public void getTopHeadlinesAustria1() {
+        List<Article> articles = null;
         AppController controller = new AppController();
-        controller.getTopHeadlinesAustria();
-
+        controller.setArticles(articles);
+        assertEquals(articles, controller.getTopHeadlinesAustria());
 
     }
 
