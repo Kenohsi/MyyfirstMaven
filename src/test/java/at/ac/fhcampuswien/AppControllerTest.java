@@ -1,13 +1,24 @@
 package at.ac.fhcampuswien;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Test
+
  public class AppControllerTest {
     // public void myFirstApp
+
+    @BeforeAll
+    public static void begin () {System.out.println("Testing NewsApp from NetSquad");
+    }
+    @AfterAll
+    public static void finish () {System.out.println("Testing NewsApp from NetSquad Finished");
+    }
+
 
 
     @Test
@@ -17,12 +28,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
     }
     @Test
-    void CountArticle() {
-        List<Article> articles = new ArrayList<>();
-        AppController controller = new AppController();
-        assertEquals(articles.size(),controller.getArticleCount());
+    void getArticleCount() {
+        List<Article> rem_article = new ArrayList<>();
+        AppController count = new AppController();
+        int actual = count.getArticleCount();
+        assertEquals(rem_article.size(), actual);
+        rem_article.add(new Article("Author", "Article"));
+
+
     }
+
     @Test
+    void countArticleIfNull() {
+        List<Article> rem_article = null;
+        AppController controller = new AppController();
+        controller.setArticles(rem_article);
+
+        assertEquals(0, controller.getArticleCount());
+
+    }
+
+
+
+
+        @Test
     List<Article> getTopHeadlinesAustria (List<Article> articles) {return articles;} {
         AppController controller = new AppController();
         controller.getTopHeadlinesAustria();
