@@ -78,6 +78,7 @@ import static org.junit.jupiter.api.Assertions.*;
         AppController controller = new AppController();
         controller.setArticles(articles);
         assertEquals(articles, controller.getTopHeadlinesAustria());
+        AppController controller1 = new AppController();
 
     }
 
