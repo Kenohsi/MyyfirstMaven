@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.*;
             controller.setArticles(articles);
             assertEquals(articles.size(), controller.getArticleCount());
         }catch (Exception e){
-            System.out.println("Something is missing");
+            System.out.println("The amount of articles donot match what is expected to return.");
         }
     }
     @Test
@@ -69,32 +69,45 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
     @Test
-    public void getTopHeadlinesAustria1() {
-        //to see if the Arraylist is the one that is giving out the same list as topheadlinesaustria.
+    public void getTopHeadlinesAustria() {
+        //to check if our list is returning what is expected to return.
         try {
-            List<Article> articles = new ArrayList<>();
+            List<Article> articles;
             AppController controller = new AppController();
-            List<Article> articles2 = new ArrayList<>();
+            List<Article> articles1 = new ArrayList<>();
             Article one = new Article("Steve Rosenberg ", "Ukraine war: Russians grieve for fallen soldiers");
-            articles.add(one);
+            articles1.add(one);
             Article two = new Article("Annabelle Liang ", "Businesses shut as officials widen Covid lockdowns");
-            articles.add(two);
+            articles1.add(two);
             Article three = new Article("Josh Martin ", "Bitcoin P&O cancels services and tells ships to stay in port");
-            articles.add(three);
+            articles1.add(three);
             Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
-            articles.add(four);
-            articles2 = controller.getTopHeadlinesAustria();
-            assertEquals(articles2.containsAll(articles),articles.containsAll(articles2));
+            articles1.add(four);
+            articles = controller.getTopHeadlinesAustria();
+            assertEquals(articles1.containsAll(articles),articles.containsAll(articles1));
         }catch (Exception e){
-            System.out.println("The articles don't match the Top Headliness!");
+            System.out.println("The articles don't match the Top Headlines!");
         }
 
     }
 
     @Test
-    public void getTopHeadlinesAustria2 () {
+    public void getAllNewsBitcoin() {
+        //to check if the method is returning what is expected of it to returnall bitcoin news.
+        try {
+            List<Article> articles;
+            AppController controller = new AppController();
+            List<Article> articles1 = new ArrayList<>();
+            Article one = new Article("Josh Martin ", "Bitcoin P&O cancels services and tells ships to stay in port");
+            articles1.add(one);
+            Article two = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
+            articles1.add(two);
+            articles = controller.getAllNewsBitcoin();
+            assertEquals(articles1.containsAll(articles), articles.containsAll(articles1));
+        }catch(Exception e){
+            System.out.println("There is an error!");
 
-
+        }
         }
 
 
