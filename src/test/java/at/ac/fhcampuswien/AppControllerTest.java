@@ -86,7 +86,7 @@ import static org.junit.jupiter.api.Assertions.*;
             articles2 = controller.getTopHeadlinesAustria();
             assertEquals(articles2.containsAll(articles),articles.containsAll(articles2));
         }catch (Exception e){
-            System.out.println("The articles don't match the Top Headlines!");
+            System.out.println("The articles don't match the Top Headliness!");
         }
 
     }
