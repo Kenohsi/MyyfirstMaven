@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AppController {
     private List<Article> articles;
-    public String query = "bitcoin";
+    public String query = "Bitcoin";
 
     public AppController() {
         this.articles = generateMockList();
@@ -35,7 +35,6 @@ public class AppController {
 
     public List<Article> getAllNewsBitcoin() {
 
-        this.query = query;
         return filterList(query, articles);
     }
 

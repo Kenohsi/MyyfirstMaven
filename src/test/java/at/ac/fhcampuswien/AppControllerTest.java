@@ -7,10 +7,11 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Test
+
 public class AppControllerTest {
 
     @BeforeAll
@@ -116,12 +117,6 @@ public class AppControllerTest {
         }
     }
 
-    @Test
-    public void getAllNewsBitcoin2() {
-
-
-    }
-
 
     @Test
     void filterList() {
@@ -130,10 +125,6 @@ public class AppControllerTest {
             List<Article> articles;
             AppController controller = new AppController();
             articles = controller.getTopHeadlinesAustria();
-          // String query = controller.getTopHeadlinesAustria().get().
-            //String query = controller.query;
-            System.out.println(controller.query);
-
 
             List<Article> articles1 = new ArrayList<>();
             Article one = new Article("Steve Rosenberg ", "Ukraine war: Russians grieve for fallen soldiers");
@@ -145,26 +136,13 @@ public class AppControllerTest {
             Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
             articles1.add(four);
 
-          ////  for (int i = 0; i < articles1.size(); i++) {
-         //   assertEquals(articles1.get(i).getTitle().contains(query), (articles.get(i).getTitle().contains(query)));  /// contains query gibt nur true oder false aus
-
-
-               // if (articles1.get(i).getTitle().contains(query)){                         //test obs richtig ausgibt
-               //     System.out.println(articles1.get(i));
-          //      }
-
-
-           // System.out.println(articles1.get(3));
-          // System.out.println(articles.);
-        //    System.out.println(articles1);
-            //System.out.println(articles1.get(3).getTitle().contains(query));
-
-
+            for (int i = 0; i < articles1.size(); i++) {
+                assertEquals(articles1.get(i).getTitle().toLowerCase().contains(controller.query.toLowerCase()), (articles.get(i).getTitle().toLowerCase().contains(controller.query.toLowerCase())));  // compares query
+            }
         } catch (Exception e) {
             e.printStackTrace();
             fail("fehler bro!");
         }
-
 
     }
 }
