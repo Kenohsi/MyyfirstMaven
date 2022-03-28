@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AppController {
     private List<Article> articles;
-
+    public String query = "bitcoin";
 
     public AppController() {
         this.articles = generateMockList();
@@ -17,31 +17,32 @@ public class AppController {
     }
 
     public int getArticleCount() {
-        if(articles == null){
+        if (articles == null) {
             return 0;
-        }else{
+        } else {
             return articles.size();
         }
 
     }
+
     public List<Article> getTopHeadlinesAustria() {
         //for (int i = 0; i < generateMockList().size(); i++) {
-         return  generateMockList();
+        return generateMockList();
 
-        }
-        //return articles;
+    }
+    //return articles;
     //}
 
     public List<Article> getAllNewsBitcoin() {
 
-        String query = "bitcoin";
+        this.query = query;
         return filterList(query, articles);
     }
 
     protected List<Article> filterList(String query, List<Article> articles) {
         List<Article> rem_article = new ArrayList<>();
-        for (Article a : articles){
-            if (a.getTitle().toLowerCase().contains(query)) {
+        for (Article a : articles) {
+            if (a.getTitle().toLowerCase().contains(query.toLowerCase())) {
                 rem_article.add(a);
             }
         }
@@ -61,7 +62,6 @@ public class AppController {
         articles.add(four);
         return articles;
     }
-
 
 
 }
