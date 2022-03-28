@@ -86,13 +86,14 @@ import static org.junit.jupiter.api.Assertions.*;
             articles = controller.getTopHeadlinesAustria();
             assertEquals(articles1.containsAll(articles),articles.containsAll(articles1));
         }catch (Exception e){
-            System.out.println("The articles don't match the Top Headlines!");
+            e.printStackTrace();
+            fail("The articles don't match the Top Headlines!");
         }
 
     }
 
     @Test
-    public void getAllNewsBitcoin() {
+    public void getAllNewsBitcoin1() {
         //to check if the method is returning what is expected of it to returnall bitcoin news.
         try {
             List<Article> articles;
@@ -105,15 +106,16 @@ import static org.junit.jupiter.api.Assertions.*;
             articles = controller.getAllNewsBitcoin();
             assertEquals(articles1.containsAll(articles), articles.containsAll(articles1));
         }catch(Exception e){
-            System.out.println("There is an error!");
+            e.printStackTrace();
+            fail("There is an error!");
 
         }
         }
-
 
     @Test
-    protected List<Article> filterList (String query, List<Article> articles){
-            return articles;
+    public void getAllNewsBitcoin2(){
+
+
         } {
     }
 
