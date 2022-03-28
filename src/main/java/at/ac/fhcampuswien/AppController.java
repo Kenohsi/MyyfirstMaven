@@ -34,7 +34,7 @@ public class AppController {
 
     public List<Article> getAllNewsBitcoin() {
 
-        String query = "Bitcoin";
+        String query = "bitcoin";
         return filterList(query, articles);
     }
 
