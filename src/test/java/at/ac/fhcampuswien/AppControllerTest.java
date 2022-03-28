@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.*;
             controller.setArticles(articles);
             assertEquals(articles.size(), controller.getArticleCount());
         }catch (Exception e){
-            System.out.println("The amount of articles donot match what is expected to return.");
+            System.out.println("The amount of articles dont match what is expected to return.");
         }
     }
     @Test
