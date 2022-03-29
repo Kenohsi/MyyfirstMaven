@@ -13,8 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AppControllerTest {
     private PrintStream originalOut;
     private InputStream originalIn;
-    private ByteArrayOutputStream bos;
-    private PrintStream ps;
 
     @BeforeAll
     public static void begin() {
@@ -31,13 +29,13 @@ public class AppControllerTest {
         originalOut = System.out;
         originalIn = System.in;
 
-        bos = new ByteArrayOutputStream();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(bos));
 
         PipedOutputStream pos = new PipedOutputStream();
         PipedInputStream pis = new PipedInputStream(pos);
         System.setIn(pis);
-        ps = new PrintStream(pos, true);
+        PrintStream ps = new PrintStream(pos, true);
     }
 
     @AfterEach
