@@ -25,7 +25,7 @@ public class AppControllerTest {
     }
 
     @BeforeEach
-    public void setupStreams() throws IOException {
+    public void beforeEach() throws IOException {
         originalOut = System.out;
         originalIn = System.in;
 
@@ -39,8 +39,7 @@ public class AppControllerTest {
     }
 
     @AfterEach
-    public void tearDownStreams() {
-        // undo the binding in System
+    public void afterEach() {
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
