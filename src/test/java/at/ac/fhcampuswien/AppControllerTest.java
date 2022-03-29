@@ -109,6 +109,7 @@ public class AppControllerTest {
             Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
             articles1.add(four);
             articles = controller.getTopHeadlinesAustria();
+            assertEquals(articles.size(), articles1.size());
             assertEquals(articles1.containsAll(articles), articles.containsAll(articles1));
         } catch (Exception e) {
             e.printStackTrace();
@@ -129,6 +130,7 @@ public class AppControllerTest {
             Article two = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
             articles1.add(two);
             articles = controller.getAllNewsBitcoin();
+            assertEquals(articles.size(), articles1.size());
             assertEquals(articles1.containsAll(articles), articles.containsAll(articles1));
         } catch (Exception e) {
             e.printStackTrace();
