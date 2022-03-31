@@ -21,7 +21,7 @@ public class App extends Application {
         launch();
         /*
         Menu menu = new Menu();
-        menu.start();
+        menu.start();a
         */
 
     }
