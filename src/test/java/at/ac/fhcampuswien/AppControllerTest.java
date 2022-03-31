@@ -1,13 +1,9 @@
 package at.ac.fhcampuswien;
 
 import org.junit.jupiter.api.*;
-
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -43,7 +39,6 @@ public class AppControllerTest {
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
-
 
     @Test
     public void setArticles1() {
@@ -109,7 +104,6 @@ public class AppControllerTest {
             Article four = new Article("The New York Times", "The Bitcoin Case That Puzzled the Shadowy World of Cryptocurrency");
             articles1.add(four);
             articles = controller.getTopHeadlinesAustria();
-            assertEquals(articles.size(), articles1.size());
             assertEquals(articles1.containsAll(articles), articles.containsAll(articles1));
         } catch (Exception e) {
             e.printStackTrace();
