@@ -12,7 +12,8 @@ public class App extends Application {
     @Override
     public void start(Stage primarystage) throws IOException{
         FXMLLoader root = new FXMLLoader(App.class.getResource("NewsApp.fxml"));
-        Scene scene = new Scene(root.load(), 558, 402);
+        Scene scene = new Scene(root.load(), 1213, 459);
+        primarystage.setTitle("NewsApp from NetSquad!");
         primarystage.setScene(scene);
         primarystage.setResizable(false);
         primarystage.show();
@@ -21,7 +22,7 @@ public class App extends Application {
         launch();
         /*
         Menu menu = new Menu();
-        menu.start();a
+        menu.start();
         */
 
     }
